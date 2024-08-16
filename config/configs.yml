@@ -1,0 +1,2 @@
+embedding:
+  model_name: "BAAI/bge-small-en"
