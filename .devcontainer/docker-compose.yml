@@ -18,28 +18,29 @@ services:
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
+  # Example I found online ...
   db:
-    hostname: db
-    image: ankane/pgvector
-    ports:
-     - 5432:5432
-    restart: always
-    environment:
-      POSTGRES_DB: vectordb
-      POSTGRES_USER: testuser
-      POSTGRES_PASSWORD: testpwd
-      POSTGRES_HOST_AUTH_METHOD: trust
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  #   hostname: db
+  #   image: ankane/pgvector
+  #   ports:
+  #    - 5432:5432
+  #   restart: always
+  #   environment:
+  #     POSTGRES_DB: vectordb
+  #     POSTGRES_USER: testuser
+  #     POSTGRES_PASSWORD: testpwd
+  #     POSTGRES_HOST_AUTH_METHOD: trust
+  #   volumes:
+  #     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
-    # image: postgres:latest
-    # restart: unless-stopped
-    # volumes:
-    #   - postgres-data:/var/lib/postgresql/data
-    # environment:
-    #   POSTGRES_USER: postgres
-    #   POSTGRES_DB: postgres
-    #   POSTGRES_PASSWORD: postgres
+    image: postgres:latest
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
 
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
