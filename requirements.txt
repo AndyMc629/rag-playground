@@ -6,3 +6,12 @@ llama-index-llms-llama-cpp
 llama-cpp-python
 pytest
 pytest-cov
+# Next few may already be satisfied by base image and above installs
+psycopg2-binary 
+pgvector 
+asyncpg 
+"sqlalchemy[asyncio]" 
+greenlet
+# For notebooks
+ipykernel
+ipywidgets
